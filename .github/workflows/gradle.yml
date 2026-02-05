@@ -2,6 +2,7 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
+
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
@@ -21,8 +22,8 @@ permissions:
 
 env:
   REGION: ap-northeast-2
-  CLUSTER_NAME: tmcdapne2-nhwy
-  APP_NAME: demoapp
+  CLUSTER_NAME: bhunydapne2-nhwy
+  APP_NAME: bhunyapp
 
 jobs:
   build:
@@ -70,7 +71,7 @@ jobs:
 
     # - name: Download task definition
     #   run: |
-    #      aws ecs describe-task-definition --task-definition demo-tmcdapne2 --query taskDefinition > task-definition.json
+    #      aws ecs describe-task-definition --task-definition demo-bhunydapne2 --query taskDefinition > task-definition.json
 
     # - name: Fill in the new image ID in the Amazon ECS task definition
     #   id: task-def
@@ -84,8 +85,8 @@ jobs:
     #   uses: aws-actions/amazon-ecs-deploy-task-definition@v2
     #   with:
     #     task-definition: ${{ steps.task-def.outputs.task-definition }}
-    #     service: demo-tmcdapne2
-    #     cluster: demo-tmcdapne2
+    #     service: demo-bhunydapne2
+    #     cluster: demo-bhunydapne2
     #     wait-for-service-stability: true
     #     codedeploy-appspec: appspec.json
     #     codedeploy-application: demo_app
@@ -107,10 +108,10 @@ jobs:
     # - name: GIT commit and push docs
     #   env:
     #     CI_COMMIT_MESSAGE: Update Tag - d${{ steps.vars.outputs.sha_short }}
-    #     CI_COMMIT_AUTHOR: zerone
+    #     CI_COMMIT_AUTHOR: bhuny
     #   run: |
     #     git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-    #     git config --global user.email "zerone5078@gmail.com"
+    #     git config --global user.email "bhuny5078@gmail.com"
     #     git status
     #     git add -A
     #     git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
