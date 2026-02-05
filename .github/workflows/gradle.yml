@@ -27,7 +27,7 @@ env:
 jobs:
   build:
     if: ${{ github.event.pull_request.merged }}
-    runs-on: springboot-sample-runner
+    runs-on: bhuny
 
     steps:
     - uses: actions/checkout@v4
