@@ -27,7 +27,7 @@ env:
 jobs:
   build:
     if: ${{ github.event.pull_request.merged }}
-    runs-on: bhuny
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
